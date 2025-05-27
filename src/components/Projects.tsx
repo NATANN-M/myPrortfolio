@@ -30,7 +30,7 @@ category: "fullstack"
     id: 2,
 title: "Spare Part Inventory Management System",
 description: "A web-based inventory management system for spare parts, built using HTML, Bootstrap, PHP, JavaScript, and CSS, featuring stock tracking, staff management, and Report Generation.",
-image: "/images/image.png",
+image: "public/images/image.png",
 tags: ["HTML", "Bootstrap", "PHP", "JavaScript", "CSS"],
 github: "https://github.com/NATANN-M",
 demo: "https://inventorytest.wuaze.com",
