@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
     id: 1,
 title: "EthioHomes Online Booking and Rental Web Platform",
 description: "A full-stack online booking and rental web platform for EthioHomes, built using C# as the backend and Bootstrap for the frontend, featuring user authentication, property management, and payment integration.",
-image: "/images/ethomes.png",
+image: "src/images/ethomes.png",
 tags: ["C#", "Bootstrap", "ASP.NET", "SQL Server"],
 github: "https://github.com/NATANN-M/EthioHomes",
 demo: "#",
