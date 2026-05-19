@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,21 +10,29 @@
 }
 
 .dark {
-  --scrollbar-track: rgba(31, 41, 55, 0.4);
-  --scrollbar-thumb: rgba(107, 114, 128, 0.5);
+  --scrollbar-track: rgba(9, 9, 11, 0.8);
+  --scrollbar-thumb: rgba(63, 63, 70, 0.8);
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Handles fixed header offset natively */
+  font-family: 'Outfit', sans-serif;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Outfit', sans-serif;
+  @apply bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(16, 185, 129, 0.3);
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -31,54 +41,32 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(136, 136, 136, 0.8);
+  background: rgba(16, 185, 129, 0.8);
 }
 
-/* Animation utilities */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Utilities for dynamic backgrounds and effects */
+.glass-effect {
+  @apply bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md border border-white/20 dark:border-zinc-800/50 shadow-xl;
 }
 
-.animate-fadeIn {
-  animation: fadeIn 1s ease-out;
+.animation-delay-2000 {
+  animation-delay: 2s;
 }
 
-/* Transition utilities */
-.transition-transform {
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
-.transition-colors {
-  transition-property: color, background-color, border-color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
-.transition-shadow {
-  transition-property: box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+.animation-delay-4000 {
+  animation-delay: 4s;
 }
 
 /* Focus styles */
 *:focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #10b981;
   outline-offset: 2px;
 }
 
 .dark *:focus-visible {
-  outline-color: #818cf8;
+  outline-color: #34d399;
 }

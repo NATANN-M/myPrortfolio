@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,45 +7,32 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import SunrayBackground from './components/SunrayBackground';
 
 function App() {
   useEffect(() => {
+    // Remove the forced dark mode from moonlight aesthetic
+    document.documentElement.classList.remove('dark');
+    
     // Update page title
     document.title = "Natanim Masresha | Web & Backend Developer";
-    
-    // Smooth scrolling for anchor links
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLAnchorElement;
-      if (target.tagName === 'A' && target.hash && target.hash.startsWith('#')) {
-        e.preventDefault();
-        const targetElement = document.querySelector(target.hash);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
-            behavior: 'smooth'
-          });
-          // Update URL without reloading page
-          history.pushState(null, '', target.hash);
-        }
-      }
-    };
-
-    document.addEventListener('click', handleAnchorClick);
-    return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-transparent text-zinc-900 dark:text-slate-100 selection:bg-emerald-500/30 transition-colors duration-500">
+      <SunrayBackground />
+      <div className="relative z-10">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Education />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

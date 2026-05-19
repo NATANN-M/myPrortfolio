@@ -5,33 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          '-apple-system', 
-          'BlinkMacSystemFont', 
-          'Segoe UI', 
-          'Roboto', 
-          'Oxygen', 
-          'Ubuntu', 
-          'Cantarell', 
-          'Open Sans', 
-          'Helvetica Neue', 
-          'sans-serif'
-        ],
-      },
-      colors: {
-        indigo: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-          950: '#1e1b4b',
-        },
+        sans: ['Outfit', 'sans-serif'],
       },
       spacing: {
         '72': '18rem',
@@ -41,12 +15,22 @@ export default {
       animation: {
         'bounce': 'bounce 1s infinite',
         'spin-slow': 'spin 3s linear infinite',
+        'blob': 'blob 7s infinite',
+      },
+      keyframes: {
+        blob: {
+          '0%': { transform: 'translate(0px, 0px) scale(1)' },
+          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+        }
       },
       transitionDuration: {
         '2000': '2000ms',
       },
       boxShadow: {
         'skill': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'glow': '0 0 20px rgba(16, 185, 129, 0.4)',
       },
       backdropBlur: {
         xs: '2px',
