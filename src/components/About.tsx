@@ -14,12 +14,12 @@ const About: React.FC = () => {
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30, rotateX: 20 },
-    visible: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
   return (
-    <section id="about" className="py-24 bg-transparent" style={{ perspective: 1000 }}>
+    <section id="about" className="py-24 bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial="hidden"
@@ -62,7 +62,7 @@ const About: React.FC = () => {
             </div>
 
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
-              <div className="group bg-white/60 dark:bg-slate-900/40 backdrop-blur-md p-6 rounded-2xl border border-zinc-200 dark:border-slate-700/50 hover:border-amber-400/50 dark:hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] hover:-translate-y-2 text-center" style={{ transformStyle: 'preserve-3d' }}>
+              <div className="group bg-white/60 dark:bg-slate-900/40 backdrop-blur-md p-6 rounded-2xl border border-zinc-200 dark:border-slate-700/50 hover:border-amber-400/50 dark:hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] hover:-translate-y-2 text-center">
                 <div className="mx-auto w-14 h-14 flex items-center justify-center bg-amber-100 dark:bg-slate-800/80 text-amber-600 dark:text-emerald-400 rounded-xl mb-5 group-hover:scale-110 group-hover:bg-amber-200 dark:group-hover:bg-slate-700/80 transition-all duration-300 shadow-sm dark:shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                   <Server size={28} strokeWidth={1.5} />
                 </div>
@@ -70,7 +70,7 @@ const About: React.FC = () => {
                 <p className="text-sm text-zinc-500 dark:text-slate-400">Scalable & Secure Systems</p>
               </div>
               
-              <div className="group bg-white/60 dark:bg-slate-900/40 backdrop-blur-md p-6 rounded-2xl border border-zinc-200 dark:border-slate-700/50 hover:border-orange-400/50 dark:hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(20,184,166,0.1)] hover:-translate-y-2 text-center" style={{ transformStyle: 'preserve-3d' }}>
+              <div className="group bg-white/60 dark:bg-slate-900/40 backdrop-blur-md p-6 rounded-2xl border border-zinc-200 dark:border-slate-700/50 hover:border-orange-400/50 dark:hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(20,184,166,0.1)] hover:-translate-y-2 text-center">
                 <div className="mx-auto w-14 h-14 flex items-center justify-center bg-orange-100 dark:bg-slate-800/80 text-orange-600 dark:text-teal-400 rounded-xl mb-5 group-hover:scale-110 group-hover:bg-orange-200 dark:group-hover:bg-slate-700/80 transition-all duration-300 shadow-sm dark:shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                   <BookOpen size={28} strokeWidth={1.5} />
                 </div>
@@ -81,12 +81,7 @@ const About: React.FC = () => {
           </motion.div>
           
           <motion.div 
-            initial={{ opacity: 0, x: 50, rotateY: -20 }}
-            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-100px" }}
             className="relative"
-            style={{ perspective: 1000 }}
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-amber-400 to-orange-500 dark:from-emerald-500 dark:to-teal-500 rounded-2xl blur-3xl opacity-20 transform scale-105 group-hover:opacity-30 transition-opacity"></div>
             <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/40 dark:border-slate-700/50 group">

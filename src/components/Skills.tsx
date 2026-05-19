@@ -26,16 +26,16 @@ const Skills: React.FC = () => {
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20, rotateX: 15 },
-    visible: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.5, type: "spring", stiffness: 100 } },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, type: "spring", stiffness: 100 } },
   };
 
   return (
-    <section id="skills" className="py-24 bg-transparent relative overflow-hidden" style={{ perspective: 1000 }}>
+    <section id="skills" className="py-24 bg-transparent relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 30, rotateX: 20 }}
-          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-3xl mx-auto text-center mb-20"
@@ -53,12 +53,11 @@ const Skills: React.FC = () => {
           {skillCategories.map((category, index) => (
             <motion.div 
               key={index} 
-              initial={{ opacity: 0, scale: 0.9, rotateY: index === 0 ? 15 : index === 2 ? -15 : 0 }}
-              whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl p-8 rounded-3xl border border-zinc-200 dark:border-slate-700/50 shadow-lg dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-xl dark:hover:shadow-[0_15px_40px_rgba(0,0,0,0.5),0_0_20px_rgba(20,184,166,0.1)] hover:border-amber-400/50 dark:hover:border-teal-500/50 transition-all duration-500 hover:-translate-y-2"
-              style={{ transformStyle: 'preserve-3d' }}
             >
               <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-8 pb-4 border-b border-zinc-200 dark:border-slate-700/50 drop-shadow-sm">
                 {category.title}
@@ -74,7 +73,7 @@ const Skills: React.FC = () => {
                   <motion.div 
                     key={skillIndex}
                     variants={itemVariants}
-                    whileHover={{ scale: 1.05, y: -2, rotateX: 10 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
                     className="px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-zinc-200 dark:border-slate-600/50 text-zinc-700 dark:text-slate-200 rounded-xl text-sm font-medium shadow-sm hover:shadow-md dark:hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] hover:border-amber-400/50 dark:hover:border-teal-400/50 hover:text-amber-600 dark:hover:text-white transition-all cursor-default"
                   >
                     {skill}
@@ -86,8 +85,8 @@ const Skills: React.FC = () => {
         </div>
 
         <motion.div 
-          initial={{ opacity: 0, y: 30, rotateX: 20 }}
-          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-24 max-w-4xl mx-auto text-center"

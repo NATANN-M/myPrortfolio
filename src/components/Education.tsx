@@ -39,16 +39,16 @@ const Education: React.FC = () => {
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, x: -20, rotateY: -10 },
-    visible: { opacity: 1, x: 0, rotateY: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
-    <section id="education" className="py-24 bg-transparent" style={{ perspective: 1200 }}>
+    <section id="education" className="py-24 bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
-          initial={{ opacity: 0, y: 30, rotateX: 20 }}
-          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-3xl mx-auto text-center mb-16"
@@ -83,7 +83,6 @@ const Education: React.FC = () => {
                     variants={itemVariants}
                     key={item.id}
                     className="relative pl-10 md:pl-0"
-                    style={{ transformStyle: 'preserve-3d' }}
                   >
                     <div className="md:hidden absolute left-3 w-4 h-4 rounded-full bg-amber-400 dark:bg-slate-300 ring-4 ring-amber-50 dark:ring-[#020617] mt-1.5 shadow-sm dark:shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
                     <div className="bg-white/60 dark:bg-slate-900/40 backdrop-blur-md p-6 lg:p-8 rounded-2xl shadow-lg dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-xl dark:hover:shadow-[0_15px_40px_rgba(0,0,0,0.5),0_0_15px_rgba(255,255,255,0.1)] border border-zinc-200 dark:border-slate-700/50 transition-all duration-500 hover:-translate-y-2 hover:border-amber-400/50 dark:hover:border-teal-500/50 group">
@@ -121,7 +120,6 @@ const Education: React.FC = () => {
                     variants={itemVariants}
                     key={item.id}
                     className="relative pl-10 md:pl-0"
-                    style={{ transformStyle: 'preserve-3d' }}
                   >
                     <div className="md:hidden absolute left-3 w-4 h-4 rounded-full bg-orange-400 dark:bg-slate-300 ring-4 ring-amber-50 dark:ring-[#020617] mt-1.5 shadow-sm dark:shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
                     <div className="bg-white/60 dark:bg-slate-900/40 backdrop-blur-md p-6 lg:p-8 rounded-2xl shadow-lg dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-xl dark:hover:shadow-[0_15px_40px_rgba(0,0,0,0.5),0_0_15px_rgba(255,255,255,0.1)] border border-zinc-200 dark:border-slate-700/50 transition-all duration-500 hover:-translate-y-2 hover:border-orange-400/50 dark:hover:border-teal-500/50 group">

@@ -26,6 +26,20 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
+        behavior: 'smooth'
+      });
+      history.pushState(null, '', href);
+    }
+  };
+
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -45,7 +59,7 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-2xl font-extrabold tracking-tighter text-zinc-900 dark:text-white flex items-center gap-1 group">
+          <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="text-2xl font-extrabold tracking-tighter text-zinc-900 dark:text-white flex items-center gap-1 group">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500 dark:from-emerald-400 dark:to-teal-300 group-hover:from-orange-500 group-hover:to-red-500 dark:group-hover:from-teal-400 dark:group-hover:to-cyan-300 transition-all duration-500">Natanim</span>
             <span className="w-2 h-2 rounded-full bg-amber-500 dark:bg-emerald-400 group-hover:scale-150 transition-transform duration-300"></span>
           </a>
@@ -56,6 +70,7 @@ const Header: React.FC = () => {
               <a 
                 key={link.name}
                 href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
                 className="relative px-4 py-1.5 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-amber-600 dark:hover:text-emerald-400 transition-colors group"
               >
                 {link.name}
@@ -66,7 +81,7 @@ const Header: React.FC = () => {
           
           <div className="hidden md:flex items-center gap-4">
              <ThemeToggle />
-             <a href="#contact" className="px-5 py-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-medium rounded-full hover:scale-105 transition-transform shadow-md">
+             <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="px-5 py-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-medium rounded-full hover:scale-105 transition-transform shadow-md">
                Let's Talk
              </a>
           </div>
@@ -98,17 +113,20 @@ const Header: React.FC = () => {
             <div className="container mx-auto px-4 py-6">
               <nav className="flex flex-col space-y-2">
                 {navLinks.map((link, i) => (
-                  <motion.a 
+                  <motion.div 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
                     key={link.name}
-                    href={link.href}
-                    className="text-zinc-700 hover:text-amber-600 dark:text-zinc-300 dark:hover:text-emerald-400 transition-colors py-3 px-4 rounded-xl text-lg font-medium hover:bg-amber-50 dark:hover:bg-zinc-800/50"
-                    onClick={() => setIsMenuOpen(false)}
                   >
-                    {link.name}
-                  </motion.a>
+                    <a
+                      href={link.href}
+                      onClick={(e) => scrollToSection(e, link.href)}
+                      className="text-zinc-700 hover:text-amber-600 dark:text-zinc-300 dark:hover:text-emerald-400 transition-colors py-3 px-4 rounded-xl text-lg font-medium hover:bg-amber-50 dark:hover:bg-zinc-800/50 block"
+                    >
+                      {link.name}
+                    </a>
+                  </motion.div>
                 ))}
               </nav>
             </div>

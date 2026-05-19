@@ -81,12 +81,12 @@ const Projects: React.FC = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section id="projects" className="py-24 bg-transparent" style={{ perspective: 1200 }}>
+    <section id="projects" className="py-24 bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 30, rotateX: 20 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
@@ -126,12 +126,11 @@ const Projects: React.FC = () => {
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9, rotateX: 10 }}
-                animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-                exit={{ opacity: 0, scale: 0.9, rotateX: -10 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
                 className="group flex flex-col bg-white/70 dark:bg-slate-900/40 backdrop-blur-md rounded-3xl overflow-hidden border border-zinc-200 dark:border-slate-700/50 transition-all duration-500 shadow-lg dark:shadow-[0_15px_30px_rgba(0,0,0,0.5)] hover:shadow-xl dark:hover:shadow-[0_15px_30px_rgba(0,0,0,0.5),0_0_20px_rgba(20,184,166,0.1)] hover:-translate-y-2 hover:border-amber-300 dark:hover:border-teal-500/50"
-                style={{ transformStyle: 'preserve-3d' }}
               >
                 <div className="relative h-64 overflow-hidden bg-zinc-100 dark:bg-slate-800">
                   <div className="absolute inset-0 bg-amber-500/10 dark:bg-teal-500/20 mix-blend-overlay group-hover:bg-transparent transition-colors duration-500 z-10"></div>
@@ -180,8 +179,8 @@ const Projects: React.FC = () => {
         </motion.div>
 
         <motion.div 
-          initial={{ opacity: 0, y: 30, rotateX: 20 }}
-          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-center mt-20"

@@ -12,16 +12,16 @@ const Contact: React.FC = () => {
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20, rotateX: 10 },
-    visible: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
-    <section id="contact" className="py-24 bg-transparent relative overflow-hidden" style={{ perspective: 1200 }}>
+    <section id="contact" className="py-24 bg-transparent relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 30, rotateX: 20 }}
-          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-3xl mx-auto text-center mb-16"
@@ -37,12 +37,11 @@ const Contact: React.FC = () => {
 
         <motion.div 
           variants={containerVariants}
-          initial={{ opacity: 0, y: 40, rotateX: 10 }}
-          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl border border-zinc-200 dark:border-slate-700/50 rounded-3xl p-8 md:p-12 shadow-2xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
-          style={{ transformStyle: 'preserve-3d' }}
         >
           <div className="space-y-10">
             <div>

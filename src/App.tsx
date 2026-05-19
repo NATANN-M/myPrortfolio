@@ -11,9 +11,6 @@ import SunrayBackground from './components/SunrayBackground';
 
 function App() {
   useEffect(() => {
-    // Remove the forced dark mode from moonlight aesthetic
-    document.documentElement.classList.remove('dark');
-    
     // Update page title
     document.title = "Natanim Masresha | Web & Backend Developer";
   }, []);
