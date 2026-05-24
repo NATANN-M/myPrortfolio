@@ -44,7 +44,7 @@ const Projects: React.FC = () => {
       image: "images/image.png",
       tags: ["HTML", "Bootstrap", "PHP", "JavaScript"],
       github: "https://github.com/NATANN-M",
-      demo: "https://inventorytest.wuaze.com",
+      demo: "https://sparepart.free.nf",
       category: "fullstack"
     },
     {
@@ -100,7 +100,7 @@ const Projects: React.FC = () => {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -178,7 +178,7 @@ const Projects: React.FC = () => {
           </AnimatePresence>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
