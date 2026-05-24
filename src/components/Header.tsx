@@ -30,14 +30,23 @@ const Header: React.FC = () => {
     e.preventDefault();
     setIsMenuOpen(false);
     
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
-        behavior: 'smooth'
-      });
-      history.pushState(null, '', href);
-    }
+    // A small timeout ensures the mobile menu closing animation doesn't block the scroll event
+    setTimeout(() => {
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        const offset = 100;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - offset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        
+        // We removed history.pushState because modifying the URL during a programmatic 
+        // smooth scroll forcefully aborts the scroll animation on mobile iOS Safari & Android.
+      }
+    }, 50);
   };
 
   const navLinks = [

@@ -1,15 +1,11 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const SunrayBackground: React.FC = () => {
-  const { scrollY } = useScroll();
-  const ySun = useTransform(scrollY, [0, 2000], [0, 200]);
-
   return (
     <div className="fixed inset-0 z-0 overflow-hidden bg-slate-50 dark:bg-zinc-950 pointer-events-none transition-colors duration-1000">
       {/* The Sun */}
       <motion.div 
-        style={{ y: ySun, willChange: "transform" }}
         className="absolute top-[-15%] right-[-20%] md:top-[-25%] md:right-[-10%] w-[600px] h-[600px] rounded-full opacity-70 mix-blend-normal dark:mix-blend-screen dark:opacity-60"
       >
         <div className="absolute inset-0 rounded-full" style={{ background: 'radial-gradient(circle, rgba(251,191,36,0.4) 0%, rgba(253,230,138,0.2) 50%, transparent 70%)' }}></div>
@@ -29,7 +25,7 @@ const SunrayBackground: React.FC = () => {
         {[...Array(15)].map((_, i) => (
           <div 
             key={i}
-            className="absolute bg-amber-100 dark:bg-amber-200 rounded-full animate-pulse shadow-[0_0_8px_rgba(253,230,138,0.8)] dark:shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+            className="absolute bg-amber-200 dark:bg-amber-100 rounded-full animate-pulse blur-[1px]"
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,

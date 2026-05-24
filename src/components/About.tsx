@@ -24,7 +24,7 @@ const About: React.FC = () => {
         <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "50px" }}
           variants={containerVariants}
           className="max-w-3xl mx-auto text-center mb-20"
         >
@@ -41,7 +41,7 @@ const About: React.FC = () => {
           <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "50px" }}
             variants={containerVariants}
             className="space-y-8"
           >

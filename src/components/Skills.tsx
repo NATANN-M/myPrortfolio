@@ -55,7 +55,7 @@ const Skills: React.FC = () => {
               key={index} 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "50px" }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl p-8 rounded-3xl border border-zinc-200 dark:border-slate-700/50 shadow-lg dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-xl dark:hover:shadow-[0_15px_40px_rgba(0,0,0,0.5),0_0_20px_rgba(20,184,166,0.1)] hover:border-amber-400/50 dark:hover:border-teal-500/50 transition-all duration-500 hover:-translate-y-2"
             >
